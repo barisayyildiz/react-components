@@ -1,0 +1,59 @@
+
+.burger-wrapper{
+	margin: 100px auto;
+	width: 160px;
+	height: 160px;
+	background-color: #282c34;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+
+	&.open .burger-meat{
+		transform: translateX(-50px);
+		background: transparent;
+		box-shadow: none;
+	}
+
+	&.open .burger-meat::before{
+		transform: rotate(45deg);
+	}
+
+	&.open .burger-meat::after{
+		transform: rotate(-45deg);
+	}
+
+	.burger-meat{
+		width: 100px;
+		height: 12px;
+		background-color: white;
+		border-radius: 5px;
+		transition: all 0.5s ease-in-out;
+
+		&::before,
+		&::after{
+			content: '';
+			position: absolute;
+			// left: 0px;
+			// top: 0px;
+			width: 100px;
+			height: 12px;
+			background-color: white;
+			border-radius: 5px;
+			transition: all 0.5s ease-in-out;
+		}
+
+		&::before{
+			transform: translate(-50%, -32px);
+		}
+
+		&::after{
+			transform: translate(-50%, 32px);
+		}
+
+	}
+
+}
+
+
